@@ -1,8 +1,7 @@
-<?php 
-	
-	echo "Hello!";
+<?php
 
-	echo "LOLec";
-	echo "Nuu lolets zhii";
- ?>
 
+include 'catalog/view/home.php';
+
+
+?>
