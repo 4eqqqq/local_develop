@@ -11,6 +11,7 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js">
 	</script>
 	<script src="js/parallax/parallax.min.js"></script>
+	<script src=js/main.js></script>
 
 
 </head>
@@ -24,7 +25,14 @@
 				</div>
 				
 				<div class="col-md-8">
-					
+					<nav>
+						<ul class="mmenu">
+							<li><a href="#about_me">О себе</a></li>
+							<li><a href="#skills">Навыки</a></li>	
+							<li><a href="#portfolio">Портфолио</a></li>	
+							<li><a href="#education">Образование</a></li>	
+						</ul>
+					</nav>
 				</div>
 
 				<div class="col-md-2">
@@ -35,56 +43,47 @@
 		</div>
 	</header>
 
-	<div id="main" data-parallax="scroll" data-image-src="img/parallax4.jpg">
+	<main id="main" data-parallax="scroll" data-image-src="img/parallax4.jpg">
 		<div class="container">
 			<div class="row">
-				<div class="section">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam consequuntur alias facilis, velit dolores repellat quod unde dicta porro ratione corporis quae libero mollitia sint vel hic quos, reiciendis illum!</p>
+				<div class="col-md-12 text-center">
+					<p>Привет, меня зовут Сергей и я</p>
+					<h1>web разработчик</h1>
 				</div>
-			</div>
-			<div class="row">
-				<div >
-					<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam eos, obcaecati ducimus ipsum sapiente aliquid amet nulla, libero harum ratione at distinctio rem veritatis possimus modi eligendi et quaerat praesentium.</span>
-				</div>
-			</div>
-			<div class="row">
-				<div >
-					<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea repudiandae repellat aperiam, blanditiis quod assumenda earum, fugit quam aut debitis reiciendis. Nulla earum ullam maxime atque, facilis aperiam. Quidem, velit.</div>
-				</div>
-				<div class="row">
-				<div >
-					<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea repudiandae repellat aperiam, blanditiis quod assumenda earum, fugit quam aut debitis reiciendis. Nulla earum ullam maxime atque, faciliss aperiam. Quidem, velit.</div>
-					<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea repudiandae repellat aperiam, blanditiis quod assumenda earum, fugit quam aut debitis reiciendis. Nulla earum ullam maxime atque, facilis aperiam. Quidem, velit.</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="section">
-					<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea repudiandae repellat aperiam, blanditiis quod assumenda earum, fugit quam aut debitis reiciendis. Nulla earum ullam maxime atque, facilis aperiam. Quidem, velit.</div>
-					<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea repudiandae repellat aperiam, blanditiis quod assumenda earum, fugit quam aut debitis reiciendis. Nulla earum ullam maxime atque, facilis aperiam. Quidem, velit.</div>
-				</div>
-			</div>
 			</div>
 		</div>
-	</div>
+		
+		<section id="about_me">
+			<h3>О себе</h3>
+		</section>
+		<section id="skills">
+			<h3>Навыки</h3>
+		</section>
+
+		<section id="portfolio">
+			<h3>Портфолио</h3>
+		</section>
+
+		<section id="education">
+			<h3>Образование</h3>
+		</section>
+
+	</main>
+	
 
 	<footer>
 
 	</footer>
 
-<script>	
-	$(function(){
-    $('body[data-type="background"]').each(function(){
-        var $bgobj = $(this); // создаем объект
-        $(window).scroll(function() {
-            var yPos = -($window.scrollTop() / $bgobj.data('speed')); // вычисляем коэффициент 
-            // Присваиваем значение background-position
-            var coords = 'center '+ yPos + 'px';
-            // Создаем эффект Parallax Scrolling
-            $bgobj.css({ backgroundPosition: coords });
-        });
-    });
-});
+<script type="text/javascript">
+$(function() {
+   $('a[href^="#"]').click(function () { 
+     elementClick = $(this).attr("href");
+     destination = $(elementClick).offset().top;
+     $('html,body').stop().animate({ scrollTop: destination }, 1000);
+     return false;
+   });
+ });
 </script>
-
 </body>
 </html>

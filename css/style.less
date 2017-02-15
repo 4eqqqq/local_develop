@@ -5,6 +5,9 @@
 
 @beb: bebas;
 
+@wh:#fff;
+@bl:#000;
+
 body{
 	/*background: url(../img/parallax1.jpg) center 0 repeat fixed; min-height: 1200px;*/
 }
@@ -15,10 +18,23 @@ header{
 	}
 }
 
-#main{
-	color: #000;
-	.section{
-		min-height: 1200px;
+main{
+	color: @wh;
+	
+	section{
+		min-height: 400px;
 	}
 
+}
+
+.mmenu{
+	list-style-type: none;
+	li{
+		display: inline-block;
+		padding-right: 30px;
+		a{
+			color: @bl;
+			text-decoration: none;
+		}
+	}
 }
